@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         //Rigidbody.velocity = input * moveSpeed * Time.deltaTime; //velocity problem yaratabilir.
     }
 
-    public int point; //Deðer ve referanslar tip,metod içerisinde arttýrdýðýmýz point bizim buradaki pointimizi arttýrmaz ve her zaman sýfýr döner.
+    public int point; //Deðer ve referans tip,metod içerisinde arttýrdýðýmýz point bizim buradaki pointimizi arttýrmaz ve her zaman sýfýr döner.
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
         if (coin!= null)
         {
-            point++;
+            point+= 1* GameManager.Instance.levelCoinMultiplier;
             coin.PickUpCoin(point);
         }
     }
